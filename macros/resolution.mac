@@ -1,0 +1,72 @@
+/run/initialize
+/tracking/verbose 0
+
+/placement/polar 30 0 0
+/placement/rotateY 90 deg
+/placement/rotateX 0 deg
+/placement/placeDetector
+
+/placement/polar 30 15 0 cm
+/placement/rotateY -90 deg
+/placement/rotateX 15 deg
+/placement/placeDetector
+
+/placement/polar 30 30 0 cm
+/placement/rotateY -90 deg
+/placement/rotateX 30 deg
+/placement/placeDetector
+
+/placement/polar 30 45 0 cm
+/placement/rotateY -90 deg
+/placement/rotateX 45 deg
+/placement/placeDetector
+
+/placement/polar 30 60 0 cm
+/placement/rotateY -90 deg
+/placement/rotateX 60 deg
+/placement/placeDetector
+
+/placement/polar 30 75 0 cm
+/placement/rotateY -90 deg
+/placement/rotateX 75 deg
+/placement/placeDetector
+
+/placement/polar 30 -15 0 cm
+/placement/rotateY -90 deg
+/placement/rotateX -15 deg
+/placement/placeDetector
+
+/placement/polar 30 -30 0 cm
+/placement/rotateY -90 deg
+/placement/rotateX -30 deg
+/placement/placeDetector
+
+/placement/polar 30 -45 0 cm
+/placement/rotateY -90 deg
+/placement/rotateX -45 deg
+/placement/placeDetector
+
+/placement/polar 30 -60 0 cm
+/placement/rotateY -90 deg
+/placement/rotateX -60 deg
+/placement/placeDetector
+
+/gps/particle gamma
+#/gps/ion 55 137
+/gps/energy 661.7 keV
+
+/gps/pos/type Plane
+/gps/pos/shape Circle
+/gps/pos/centre 0 -30 0 cm 
+/gps/pos/radius 1.5 mm
+/gps/pos/rot1 0 0 1
+/gps/pos/rot2 1 0 0
+
+/gps/ang/type iso
+/gps/ang/rot1 0 0 1
+/gps/ang/rot2 -1 0 0
+/gps/ang/mintheta 0 rad
+/gps/ang/maxtheta 0.05 rad
+
+/run/printProgress 1000000
+/run/beamOn 200

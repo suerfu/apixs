@@ -1,0 +1,38 @@
+// $Id: RunActionMessenger.cc $
+//
+/// \file RunActionMessenger.cc
+/// \brief Definition of the RunActionMessenger class
+
+#include "RunActionMessenger.hh"
+#include "RunAction.hh"
+#include "G4UIdirectory.hh"
+#include "G4UIcmdWithAString.hh"
+
+RunActionMessenger::RunActionMessenger(RunAction* filename)
+  : G4UImessenger(),
+    SetFileName(filename)
+{
+    SetFileNameDir = new G4UIdirectory("/filename");
+    SetFileNameDir->SetGuidance("Set the filename of the out put file (Please write in form of <somename.root>)");
+
+    FileNameCmd = new G4UIcmdWithAString("/filename/setFilename", this);
+    FileNameCmd->SetGuidance("Set the filename of the out put file (Please write in form of <somename.root>)");
+    FileNameCmd->SetParameterName("newname", false);
+    FileNameCmd->AvailableForStates(G4State_Idle);
+    FileNameCmd->SetDefaultValue("default_output_filename.root");
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+
+RunActionMessenger::~RunActionMessenger()
+{
+    delete FileNameCmd;
+    delete SetFileNameDir;
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....
+
+void RunActionMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
+{
+    SetFileName->setOutputFileName(newValue);
+}

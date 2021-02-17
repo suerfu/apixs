@@ -1,0 +1,31 @@
+
+/process/em/fluo true
+/process/em/auger true
+/process/em/pixe true
+
+/run/initialize
+/tracking/verbose 0
+
+/gps/particle alpha
+#/gps/particle proton
+#/gps/ion 55 137
+/gps/position 0 0 1.75 cm
+#/gps/direction 0 1 1
+/gps/energy 5.486 MeV
+
+#/gps/pos/type Plane
+#/gps/pos/shape Circle
+#/gps/pos/centre 0 -30 0 cm 
+#/gps/pos/radius 1.5 mm
+#/gps/pos/rot1 -1 0 -1
+#/gps/pos/rot2 0 1 0
+
+/gps/ang/type iso
+/gps/ang/rot1 1 0 1
+/gps/ang/rot2 0 1 0
+/gps/ang/mintheta 0 rad
+/gps/ang/maxtheta 0.1 rad
+
+/run/setCut 0.001 mm
+/run/printProgress 10000
+/run/beamOn 200
